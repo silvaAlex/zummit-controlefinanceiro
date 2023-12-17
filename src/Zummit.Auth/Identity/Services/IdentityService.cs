@@ -41,7 +41,7 @@ namespace Zummit.Auth.Identity.Services
             return usuarioCadastroResponse;
         }
 
-        public async Task<LoginUsuarioResponse> Login(LoginUsuarioRequest loginUsuario)
+        public async Task<LoginUsuarioResponse> LoginUsuario(LoginUsuarioRequest loginUsuario)
         {
             var result = await signInManager.PasswordSignInAsync(loginUsuario.Email, loginUsuario.Senha, false, true);
 

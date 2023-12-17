@@ -13,6 +13,6 @@ namespace Zummit.Auth.Identity.Services.Interfaces
 
     public interface ILoginService : IIdentityService<LoginUsuarioRequest, LoginUsuarioResponse>
     {
-        Task<LoginUsuarioResponse> CadastrarUsuario(LoginUsuarioRequest loginRequest);
+        Task<LoginUsuarioResponse> LoginUsuario(LoginUsuarioRequest loginRequest);
     }
 }
