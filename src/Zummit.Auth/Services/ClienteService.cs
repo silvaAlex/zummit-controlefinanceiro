@@ -1,5 +1,6 @@
 ﻿using Zummit.Auth.Models;
 using Zummit.Auth.Repository;
+using Zummit.Auth.ViewModels;
 
 namespace Zummit.Auth.Services
 {
@@ -20,6 +21,6 @@ namespace Zummit.Auth.Services
       
         public Task<Cliente?> GetAsync(Guid clienteId) => clienteRepository.GetAsync(clienteId);
 
-        public Task UpdateAsync(Cliente cliente) => clienteRepository.UpdateAsync(cliente);
+        public Task UpdateAsync(Guid clienteId, ClienteVM clienteVM) => clienteRepository.UpdateAsync(clienteId, clienteVM);
     }
 }

@@ -40,5 +40,16 @@ namespace Zummit.Auth.Controllers
         {
             await clienteService.UpdateAsync(clienteId, clienteVM);
         }
+
+        [HttpPost]
+        public async Task CreateClienteAsync([FromBody] ClienteVM clienteVM)
+        {
+            Cliente cliente = new()
+            {
+                Id = Guid.NewGuid(),
+                Nome = clienteVM.Nome,
+            };
+            await clienteService.CreateAsync(cliente);
+        }
     }
 }
