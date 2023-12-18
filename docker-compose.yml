@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  conta-api:
+    build: "./src/Zummit.Conta"
+    expose:
+      - "80"
+    ports:
+      - "5102:80"
+    depends_on:
+      - auth-api
+  auth-api:
+    build: "./src/Zummit.Auth"
+    expose:
+      - "80"
+    ports:
+      - "5101:80"
