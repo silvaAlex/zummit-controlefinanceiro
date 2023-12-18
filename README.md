@@ -2,7 +2,7 @@
 
 PROVA TÉCNICA – Desenvolvedor BackEnd
 
-![.NET Core](https://github.com/silvaAlex/zummit-controlefinanceiro/workflows/.NETCore/badge.svg)
+![.NET Core](https://github.com/silvaAlex/zummit-controlefinanceiro/.github/workflows/.NETCore/badge.svg)
 [![License](http://img.shields.io/github/license/silvaAlex/zummit-controlefinanceiro.svg)](LICENSE)
 
 ## Como Rodar
