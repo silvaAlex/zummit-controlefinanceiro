@@ -7,14 +7,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Zummit.Conta/Zummit.Conta.csproj", "src/Zummit.Conta/"]
+COPY ["Zummit.Conta.csproj", "src/Zummit.Conta/"]
 RUN dotnet restore "src/Zummit.Conta/Zummit.Conta.csproj"
 COPY . .
-WORKDIR "/src/src/Zummit.Conta"
 RUN dotnet build "Zummit.Conta.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "Zummit.Conta.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
 
 FROM base AS final
 WORKDIR /app

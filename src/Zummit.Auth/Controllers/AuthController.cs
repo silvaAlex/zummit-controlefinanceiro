@@ -42,12 +42,12 @@ namespace Zummit.Auth.Controllers
 
         }
 
-        [ProducesResponseType(typeof(CadastroUsuarioResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(LoginUsuarioResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         [HttpPost("login")]
-        public async Task<ActionResult<CadastroUsuarioResponse>> Login(LoginUsuarioRequest loginUsuario)
+        public async Task<ActionResult<LoginUsuarioResponse>> Login(LoginUsuarioRequest loginUsuario)
         {
             if (!ModelState.IsValid)
                 return BadRequest();

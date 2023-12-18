@@ -1,31 +1,36 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace Zummit.ControleFinanceiro.API.Models.Banco
 {
     public record ContaBancaria
     {
-        private double saldo = 0.0;
+        [Key]
+        public Guid ClienteId { get; set; }
+        public double Saldo { get; private set; }
+
         private readonly DateTime dataAbertura;
 
         public ContaBancaria()
         {
-            saldo = 0.0;
+            Saldo = 0.0;
+            ClienteId = Guid.NewGuid();
             dataAbertura = DateTime.Now;
         }
 
         public string RetornaSaldoFormatado()
         {
-            return string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", saldo);
+            return string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", Saldo);
         }
 
         public double ObterSaldo()
         {
-            return saldo;
+            return Saldo;
         }
 
-        public void AtualizarSaldo(double quantia)
+        public void AtualizarSaldo(double saldo)
         {
-            saldo = quantia;
+            Saldo = saldo;
         }
 
         public string RetornaDataAberturaFormatada()

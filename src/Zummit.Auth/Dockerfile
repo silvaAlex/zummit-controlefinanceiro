@@ -7,10 +7,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Zummit.Auth/Zummit.Auth.csproj", "src/Zummit.Auth/"]
+COPY ["Zummit.Auth.csproj", "src/Zummit.Auth/"]
 RUN dotnet restore "src/Zummit.Auth/Zummit.Auth.csproj"
 COPY . .
-WORKDIR "/src/src/Zummit.Auth"
 RUN dotnet build "Zummit.Auth.csproj" -c Release -o /app/build
 
 FROM build AS publish
