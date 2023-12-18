@@ -5,6 +5,9 @@ namespace Zummit.Auth.Identity.Models
     public class RegisterUser
     {
         [Required]
+	    public string? Nome { get; set; }
+
+        [Required]
         [EmailAddress]
         public string? Email { get; set; }
 

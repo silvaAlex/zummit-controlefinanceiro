@@ -4,7 +4,7 @@ namespace Zummit.Auth.DTO.Response
 {
     public class LoginUsuarioResponse
     {
-        public bool Sucesso => Erros.Count == 0;
+        public bool Sucess => Erros.Count == 0;
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AccessToken { get; private set; }

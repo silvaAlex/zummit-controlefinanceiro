@@ -1,18 +1,12 @@
-﻿using System.Threading.Tasks;
-using Zummit.Auth.DTO.Request;
+﻿using Zummit.Auth.DTO.Request;
 using Zummit.Auth.DTO.Response;
 
 namespace Zummit.Auth.Identity.Services.Interfaces
 {
-    public interface IIdentityService<TRequest, TResponse> { }
-
-    public interface ICadastroService : IIdentityService<CadastroUsuarioRequest, CadastroUsuarioResponse>
-    {
+    public interface IIdentityService 
+    { 
         Task<CadastroUsuarioResponse> CadastrarUsuario(CadastroUsuarioRequest cadastroUsuario);
-    }
-
-    public interface ILoginService : IIdentityService<LoginUsuarioRequest, LoginUsuarioResponse>
-    {
+ 
         Task<LoginUsuarioResponse> LoginUsuario(LoginUsuarioRequest loginRequest);
     }
 }

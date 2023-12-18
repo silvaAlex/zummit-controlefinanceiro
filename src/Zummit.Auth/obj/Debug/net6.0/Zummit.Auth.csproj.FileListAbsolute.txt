@@ -243,3 +243,9 @@ C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Aut
 C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\obj\Debug\net6.0\Zummit.Auth.pdb
 C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\obj\Debug\net6.0\Zummit.Auth.genruntimeconfig.cache
 C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\obj\Debug\net6.0\ref\Zummit.Auth.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\silva\Documents\dev\zummit\zummit-controlefinanceiro-api\src\Zummit.Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,30 +1,35 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Zummit.Auth.DTO.Request;
 using Zummit.Auth.DTO.Response;
 using Zummit.Auth.Identity.Jwt;
+using Zummit.Auth.Identity.Models;
 using Zummit.Auth.Identity.Services.Interfaces;
 
 namespace Zummit.Auth.Identity.Services
 {
-    public class IdentityService : ICadastroService, ILoginService
+    public class IdentityService : IIdentityService
     {
-        readonly UserManager<IdentityUser> userManager;
-        readonly SignInManager<IdentityUser> signInManager;
+        readonly UserManager<ApplicationUser> userManager;
+        readonly SignInManager<ApplicationUser> signInManager;
         readonly JwtOptions jwtOptions;
 
-        public IdentityService(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, JwtOptions jwtOptions)
+        public IdentityService(SignInManager<ApplicationUser> signInManager, 
+            UserManager<ApplicationUser> userManager, 
+            IOptions<JwtOptions> jwtOptions)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
-            this.jwtOptions = jwtOptions;
+            this.jwtOptions = jwtOptions.Value;
         }
 
         public async Task<CadastroUsuarioResponse> CadastrarUsuario(CadastroUsuarioRequest cadastroUsuario)
         {
-            var identityUser = new IdentityUser
+            var identityUser = new ApplicationUser
             {
+                Nome = cadastroUsuario.Nome,
                 UserName = cadastroUsuario.Email,
                 Email = cadastroUsuario.Email,
                 EmailConfirmed = true
@@ -84,7 +89,7 @@ namespace Zummit.Auth.Identity.Services
             );
         }
 
-        private async Task<IList<Claim>> ObterClaims(IdentityUser user, bool adicionarClaimsUsuario)
+        private async Task<IList<Claim>> ObterClaims(ApplicationUser user, bool adicionarClaimsUsuario)
         {
             var claims = new List<Claim>
             {
